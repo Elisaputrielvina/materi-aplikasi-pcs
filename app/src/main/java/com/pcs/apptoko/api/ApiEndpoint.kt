@@ -11,4 +11,14 @@ interface ApiEndpoint {
         @Field("email") email : String,
         @Field("password") password : String
     ) : Call<LoginResponse>
+
+    @GET("produk"
+    fun getproduk(@Header("Authorization") token : String) : Call<ProdukResponse>
+
+    @FormUrlEncoded@POST("produk")
+            fun postProduk(
+        @Header("Authorization") token : String,
+        @Field("admin_id") admin_id : Int,
+        @Field("harga") harga : Int,
+            )
 }
